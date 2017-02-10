@@ -46,6 +46,11 @@ $config = [
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'api' => [
+            'class' => 'app\modules\api\Module',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
