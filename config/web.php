@@ -44,12 +44,42 @@ $config = [
             'rules' => [
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'itemTable' => '{{%auth_item}}',
+            'itemChildTable' => '{{%auth_item_child}}',
+            'assignmentTable' => '{{%auth_assignment}}',
+            'ruleTable' => '{{%auth_rule}}',
+        ],
     ],
     'params' => $params,
     'modules' => [
         'api' => [
             'class' => 'app\modules\api\Module',
         ],
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu',    // defaults to null, using the application's layout without the menu
+                                // other available values are 'right-menu' and 'top-menu'
+            'mainLayout' => '@app/views/layouts/backend.php',
+            'controllerMap' => [
+                'assignment' => [
+                    'class' => 'mdm\admin\controllers\AssignmentController',
+                    'userClassName' => 'app\models\User',
+                    'idField' => 'id',
+                ],
+            ],
+            // 'menus' => [
+                // 'assignment' => [
+                //     'label' => 'Grant Access' // change label
+                // ],
+                // 'route' => null, // disable menu
+            // ],
+        ],
+        'manager' => [
+            'class' => 'app\modules\manager\Module',
+        ],
+
     ],
 ];
 

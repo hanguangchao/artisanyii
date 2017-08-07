@@ -6,4 +6,6 @@ return [
     'username' => 'homestead',
     'password' => 'secret',
     'charset' => 'utf8',
+    'enableSchemaCache' => true,
+    'schemaCacheDuration' => 3600,
 ];
