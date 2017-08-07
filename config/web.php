@@ -51,6 +51,7 @@ $config = [
             'assignmentTable' => '{{%auth_assignment}}',
             'ruleTable' => '{{%auth_rule}}',
         ],
+        'assetManager'  => require (__DIR__ . '/assetManager.conf.php'),
     ],
     'params' => $params,
     'modules' => [

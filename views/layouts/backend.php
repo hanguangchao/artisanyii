@@ -10,7 +10,7 @@ use app\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
-
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +40,11 @@ AppAsset::register($this);
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <?php //$this->head(); ?>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-
+<?php $this->beginBody() ?>
 <div class="wrapper">
 
   <header class="main-header">
@@ -634,6 +635,7 @@ if (isset($this->params['breadcrumbs'])) {
 </div>
 <!-- ./wrapper -->
 
+<?php $this->endBody() ?>
 
 <!-- jQuery 2.2.3 -->
 <script src="/static/AdminLTE-2.3.11/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -663,3 +665,4 @@ if ('dashboard' == $this->context->id) {
 
 </body>
 </html>
+<?php $this->endPage() ?>
