@@ -8,24 +8,29 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<!-- form start -->
-<?php $form = ActiveForm::begin(); ?>
-<!-- <form role="form"> -->
-<div class="box-body">
-    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+<div class="user-form box box-primary">
+    <?php $form = ActiveForm::begin(); ?>
+    <div class="box-body table-responsive">
 
-    <?= $form->field($model, 'email') ?>
+        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput() ?>
-    
+        <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
 
-<!-- /.box-body -->
+        <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
 
+        <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'status')->textInput() ?>
+
+        <?= $form->field($model, 'created_at')->textInput() ?>
+
+        <?= $form->field($model, 'updated_at')->textInput() ?>
+
+    </div>
+    <div class="box-footer">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
+    </div>
+    <?php ActiveForm::end(); ?>
 </div>
-<!-- /.box-body -->
-
-<div class="box-footer">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
- <!-- </form> -->
- <?php ActiveForm::end(); ?>

@@ -51,7 +51,13 @@ $config = [
             'assignmentTable' => '{{%auth_assignment}}',
             'ruleTable' => '{{%auth_rule}}',
         ],
-        'assetManager'  => require (__DIR__ . '/assetManager.conf.php'),
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                ],
+            ],
+        ],
     ],
     'params' => $params,
     'modules' => [
@@ -62,7 +68,7 @@ $config = [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu',    // defaults to null, using the application's layout without the menu
                                 // other available values are 'right-menu' and 'top-menu'
-            'mainLayout' => '@app/views/layouts/backend.php',
+            'mainLayout' => '@app/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [
                     'class' => 'mdm\admin\controllers\AssignmentController',
@@ -98,6 +104,14 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         'allowedIPs' => ['127.0.0.1', '::1', '*'],
+        'generators' => [ //here
+            'crud' => [
+                'class' => 'yii\gii\generators\crud\Generator',
+                'templates' => [
+                    'adminlte' => '@vendor/dmstr/yii2-adminlte-asset/gii/templates/crud/simple',
+                ]
+            ]
+        ],
     ];
 }
 

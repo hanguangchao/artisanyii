@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\User;
 
 /**
- * UserSearch represents the model behind the search form about `app\models\User`.
+ * UserSearch represents the model behind the search form of `app\models\User`.
  */
 class UserSearch extends User
 {
@@ -47,6 +47,7 @@ class UserSearch extends User
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['id' => SORT_DESC]]
         ]);
 
         $this->load($params);
