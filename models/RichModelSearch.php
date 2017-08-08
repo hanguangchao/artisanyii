@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\models\RichModel;
 
 /**
- * RichModelSearch represents the model behind the search form about `app\models\RichModel`.
+ * RichModelSearch represents the model behind the search form of `app\models\RichModel`.
  */
 class RichModelSearch extends RichModel
 {
@@ -47,6 +47,7 @@ class RichModelSearch extends RichModel
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['id' => SORT_DESC]]
         ]);
 
         $this->load($params);

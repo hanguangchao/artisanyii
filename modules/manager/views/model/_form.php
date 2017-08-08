@@ -8,28 +8,27 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="rich-model-form">
-
+<div class="rich-model-form box box-primary">
     <?php $form = ActiveForm::begin(); ?>
+    <div class="box-body table-responsive">
 
-    <?= $form->field($model, 'model_name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'model_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'model_table_name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'model_table_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'model_content')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'model_content')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+        <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+        <?= $form->field($model, 'updated_at')->textInput() ?>
 
-    <?= $form->field($model, 'created_by')->textInput() ?>
+        <?= $form->field($model, 'created_by')->textInput() ?>
 
-    <?= $form->field($model, 'updated_by')->textInput() ?>
+        <?= $form->field($model, 'updated_by')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
-
+    <div class="box-footer">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
+    </div>
     <?php ActiveForm::end(); ?>
-
 </div>
