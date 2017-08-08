@@ -5,12 +5,9 @@ namespace app\modules\manager\controllers;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
-use app\models\SignupForm;
-
 use app\controllers\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Html;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -66,18 +63,15 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
+        $model = new User();
 
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                return $this->redirect(['view', 'id' => $user->id]);
-            } else {
-                Yii::$app->session->setFlash('error', Html::errorSummary($model));
-            }   
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
