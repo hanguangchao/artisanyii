@@ -17,6 +17,11 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '__identity', 'httpOnly' => true],
+        ],
+        //自定义SESSION NAME
+        'session' =>[
+            'name' => 'MYDFDSESSID',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
