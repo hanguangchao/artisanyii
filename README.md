@@ -5,3 +5,4 @@
 * [adminlte demo](https://github.com/hanguangchao/artisanyii/tree/AdminLTE) AdminLTE 集成Yii2 & yii2-admin
 * [feature_request_behaviors](https://github.com/hanguangchao/artisanyii/tree/feature_request_behaviors) 应用事件
 * [feature_dbconfig](https://github.com/hanguangchao/artisanyii/tree/feature_dbconfig) 数据库配置
+* [feature_user_config](https://github.com/hanguangchao/artisanyii/tree/feature_user_config) 用户配置，SESSION自定义配置
