@@ -11,8 +11,8 @@ return [
     'enableProfiling' => YII_ENV_DEV ? true : false, //since 2.0.12
     'enableLogging' => YII_ENV_DEV ? true : false, //since 2.0.12
     'slaveConfig' => [
-        'username' => $dbSlaveConfig['username'],
-        'password' => $dbSlaveConfig['password'],
+        'username' => 'homestead',
+        'password' => 'secret',
         'attributes' => [
             // use a smaller connection timeout
             PDO::ATTR_TIMEOUT => 10,
