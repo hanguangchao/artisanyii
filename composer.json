@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "mobiledetect/mobiledetectlib": "^2.8",
         "mdmsoft/yii2-admin": "~2.0",
-        "dmstr/yii2-adminlte-asset": "2.*"
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "yiisoft/yii2-redis": "^2.0",
+        "pastuhov/yii2-redis-mutex": "^0.1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
