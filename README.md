@@ -6,3 +6,5 @@
 * [feature_request_behaviors](https://github.com/hanguangchao/artisanyii/tree/feature_request_behaviors) 应用事件
 * [feature_dbconfig](https://github.com/hanguangchao/artisanyii/tree/feature_dbconfig) 数据库配置
 * [feature_user_config](https://github.com/hanguangchao/artisanyii/tree/feature_user_config) 用户配置，SESSION自定义配置
+* [feature_use_redis](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis) 使用Yii2-Redis,Redis锁
+ 
