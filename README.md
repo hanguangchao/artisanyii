@@ -6,8 +6,10 @@
 
 ### 安装yii2-redis
 
+### 安装php-resque
 ```
 composer require --prefer-dist yiisoft/yii2-redis
 composer require pastuhov/yii2-redis-mutex
+composer require  "chrisboulton/php-resque 1.2"
 ```
 
