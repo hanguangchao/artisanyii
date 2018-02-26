@@ -13,3 +13,5 @@
 * [feature_use_views](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis)视图(Views) 
 * [feature_use_helpers](https://github.com/hanguangchao/artisanyii/tree/feature_use_helpers)小工具（Helpers）
 * [feature_use_cache](https://github.com/hanguangchao/artisanyii/tree/feature_use_cache)缓存（Cache） 
+* [feature_use_components](https://github.com/hanguangchao/artisanyii/tree/feature_use_components)组件（Components） 
+* [feature_use_modules](https://github.com/hanguangchao/artisanyii/tree/feature_use_modules)模块（Modules） 
