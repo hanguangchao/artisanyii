@@ -11,5 +11,5 @@
 * [feature_use_models](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis) 模型-活动记录（Active Record）
 * [feature_use_controllers](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis) 控制器(Controllers)
 * [feature_use_views](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis)视图(Views) 
-* [feature_use_helpers](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis)小工具（Helpers）
- 
+* [feature_use_helpers](https://github.com/hanguangchao/artisanyii/tree/feature_use_helpers)小工具（Helpers）
+* [feature_use_cache](https://github.com/hanguangchao/artisanyii/tree/feature_use_cache)缓存（Cache） 
