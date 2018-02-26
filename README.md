@@ -1,10 +1,9 @@
-# Yii 实战
+# Yii 实战-缓存
 
-内容索引
-* [feature_api_module](https://github.com/hanguangchao/artisanyii/tree/feature_api_module) 实现接口模块统一JSON输出
-* [adminlte demo](https://github.com/hanguangchao/artisanyii/tree/AdminLTE) AdminLTE 集成Yii2 & yii2-admin
-* [feature_request_behaviors](https://github.com/hanguangchao/artisanyii/tree/feature_request_behaviors) 应用事件
-* [feature_dbconfig](https://github.com/hanguangchao/artisanyii/tree/feature_dbconfig) 数据库配置
-* [feature_user_config](https://github.com/hanguangchao/artisanyii/tree/feature_user_config) 用户配置，SESSION自定义配置
-* [feature_use_redis](https://github.com/hanguangchao/artisanyii/tree/feature_use_redis) 使用Yii2-Redis,Redis锁
+代码目录
+
+```
+controllers/CachingController.php
+```
+
  
