@@ -16,3 +16,4 @@
 * [feature_use_components](https://github.com/hanguangchao/artisanyii/tree/feature_use_components)组件（Components） 
 * [feature_use_modules](https://github.com/hanguangchao/artisanyii/tree/feature_use_modules)模块（Modules） 
 * [feature_beanstalk](https://github.com/hanguangchao/artisanyii/tree/feature_beanstalk) Yii使用Beanstalk队列 
+* [feature_use_rabbitmq](https://github.com/hanguangchao/artisanyii/tree/feature_use_rabbitmq) Yii使用RabbitMQ
