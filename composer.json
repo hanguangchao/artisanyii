@@ -23,7 +23,8 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "phpoffice/phpword": "^0.14.0",
         "dompdf/dompdf": "^0.8.2",
-        "phpoffice/phpspreadsheet": "^1.2"
+        "phpoffice/phpspreadsheet": "^1.2",
+        "php-amqplib/php-amqplib": "^2.7"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
