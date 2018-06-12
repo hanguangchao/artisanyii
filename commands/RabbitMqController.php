@@ -195,6 +195,11 @@ class RabbitMqController extends \yii\console\Controller
         $connection->close();
     }
 
+    /**
+     * 使用 direct 交换机
+     * 消息将传递到 binding key 与消息的 routing key 完全匹配的队列。
+     * @return [type] [description]
+     */
     public function actionReceiveLogsDirect()
     {
         $argv = array_slice($_SERVER['argv'], 1);
@@ -209,6 +214,7 @@ class RabbitMqController extends \yii\console\Controller
             exit(1);
         }
         foreach ($severities as $severity) {
+            //订阅
             $channel->queue_bind($queue_name, 'direct_logs', $severity);
         }
 
@@ -225,4 +231,6 @@ class RabbitMqController extends \yii\console\Controller
         $channel->close();
         $connection->close();
     }
+
+    
 }
