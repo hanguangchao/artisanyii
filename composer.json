@@ -18,13 +18,10 @@
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "mobiledetect/mobiledetectlib": "^2.8",
         "mdmsoft/yii2-admin": "~2.0",
         "dmstr/yii2-adminlte-asset": "2.*",
-        "phpoffice/phpword": "^0.14.0",
-        "dompdf/dompdf": "^0.8.2",
-        "phpoffice/phpspreadsheet": "^1.2",
-        "php-amqplib/php-amqplib": "^2.7"
+        "yiisoft/yii2-authclient": "~2.1.0",
+        "bshaffer/oauth2-server-php" : "^1.10"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -37,12 +34,5 @@
     },
     "config": {
         "process-timeout": 10
-    },
-    "repositories": {
-                "packagist": {
-                                "type": "composer",
-                                            "url": "https://packagist.phpcomposer.com"
-                                                        }
-                    }
-
+    }
 }
