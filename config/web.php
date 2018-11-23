@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'timeZone' => 'Asia/Shanghai',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -42,6 +43,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'GET /oauth2' => '/oauth2/default/index',
+                'GET,POST oauth2/authorize' => 'oauth2/rest/authorize',
+                'POST oauth2/token' => 'oauth2/rest/token',
+                'POST oauth2/refresh_token' => 'oauth2/rest/refresh-token',
+                'GET oauth2/cb' => 'oauth2/client/cb',
+                'GET,POST api/user' => 'oauth2/resource/user',
             ],
         ],
         'authManager' => [
@@ -90,29 +97,5 @@ $config = [
     ],
 ];
 
-if (YII_ENV_DEV) {
-    // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
-    ];
-
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', '*'],
-        'generators' => [ //here
-            'crud' => [
-                'class' => 'yii\gii\generators\crud\Generator',
-                'templates' => [
-                    'adminlte' => '@vendor/dmstr/yii2-adminlte-asset/gii/templates/crud/simple',
-                ]
-            ]
-        ],
-    ];
-}
 
 return $config;
