@@ -22,7 +22,8 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "yiisoft/yii2-authclient": "~2.1.0",
         "bshaffer/oauth2-server-php" : "^1.10",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "elasticsearch/elasticsearch": "^6.0"
     },
     "require-dev": {
 

@@ -12,6 +12,9 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'errorHandler' => [
+            'memoryReserveSize' => 0,
+        ],
         'log' => [
             'targets' => [
                 [
@@ -21,13 +24,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-            'itemTable' => '{{%auth_item}}',
-            'itemChildTable' => '{{%auth_item_child}}',
-            'assignmentTable' => '{{%auth_assignment}}',
-            'ruleTable' => '{{%auth_rule}}',
-        ],
+        // 'authManager' => [
+        //     'class' => 'yii\rbac\DbManager',
+        //     'itemTable' => '{{%auth_item}}',
+        //     'itemChildTable' => '{{%auth_item_child}}',
+        //     'assignmentTable' => '{{%auth_assignment}}',
+        //     'ruleTable' => '{{%auth_rule}}',
+        // ],
     ],
     'params' => $params,
     /*
@@ -39,12 +42,12 @@ $config = [
     */
 ];
 
-if (YII_ENV_DEV) {
-    // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
-}
+// if (YII_ENV_DEV) {
+//     // configuration adjustments for 'dev' environment
+//     $config['bootstrap'][] = 'gii';
+//     $config['modules']['gii'] = [
+//         'class' => 'yii\gii\Module',
+//     ];
+// }
 
 return $config;
