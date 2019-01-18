@@ -23,7 +23,8 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "yiisoft/yii2-redis": "^2.0",
         "pastuhov/yii2-redis-mutex": "^0.1.1",
-        "chrisboulton/php-resque": "1.2"
+        "chrisboulton/php-resque": "1.2",
+        "workerman/workerman": "^3.5"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
