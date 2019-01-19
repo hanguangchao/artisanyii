@@ -18,4 +18,4 @@
 * [feature_beanstalk](https://github.com/hanguangchao/artisanyii/tree/feature_beanstalk) Yii使用Beanstalk队列 
 * [feature_use_rabbitmq](https://github.com/hanguangchao/artisanyii/tree/feature_use_rabbitmq) Yii使用RabbitMQ
 * [feature_use_yii2queue](https://github.com/hanguangchao/artisanyii/tree/feature_use_yiiqueue) Yii使用官方yii2-queue队列组件
-* [feature_use_workerman](https://github.com/hanguangchao/artisanyii/blob/feature_use_workerman) Yii命令行运行Workerman
+* [feature_use_workerman](https://github.com/hanguangchao/artisanyii/tree/feature_use_workerman) Yii命令行运行Workerman
