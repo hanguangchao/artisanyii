@@ -13,6 +13,8 @@ composer require workerman/workerman
 ### 运行
 ```
 php yii workerman
-php yii workerman/tcp-client
+
 php yii workerman/tcp-server
+
+php yii workerman/tcp-client
 ```
