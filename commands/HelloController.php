@@ -25,6 +25,30 @@ class HelloController extends Controller
      */
     public function actionIndex($message = 'hello world')
     {
+        //Yii方式接收参数
         echo $message . "\n";
+
+        try {
+            var_dump($argv);
+        } catch (\Exception $e) {
+            echo $e->getMessage(); //Undefined variable: argv
+        }
+
+        //接收原始命令行参数
+        global $argv;
+        var_dump($argv);
+        
+
+
+        //输入提示符
+        $name = \yii\helpers\BaseConsole::input("输入姓名: ");
+        $age  = \yii\helpers\BaseConsole::prompt("输入年龄: ", ['default' => 20]);
+
+        if(!$this->confirm("确定输入正确吗?")) {
+            exit("退出\n");
+        }
+        echo "你输入的姓名是:$name\n";
+        echo "你输入的年龄是:$age\n";
+
     }
 }
