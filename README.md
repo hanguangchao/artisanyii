@@ -1,15 +1,18 @@
 # Yii 实战
 
 
-## 使用Redis
+## 使用Workerman
 
 
-### 安装yii2-redis
+### 安装workerman
 
-### 安装php-resque
 ```
-composer require --prefer-dist yiisoft/yii2-redis
-composer require pastuhov/yii2-redis-mutex
-composer require  "chrisboulton/php-resque 1.2"
+composer require workerman/workerman
 ```
 
+### 运行
+```
+php yii workerman
+php yii workerman/tcp-client
+php yii workerman/tcp-server
+```
