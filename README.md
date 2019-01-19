@@ -16,5 +16,7 @@ php yii workerman
 
 php yii workerman/tcp-server
 
+php yii  workerman/tcp-server start
+
 php yii workerman/tcp-client
 ```
