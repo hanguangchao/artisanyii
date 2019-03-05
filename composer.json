@@ -22,12 +22,19 @@
         "mdmsoft/yii2-admin": "~2.0",
         "dmstr/yii2-adminlte-asset": "2.*",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "yiisoft/yii2-redis": "^2.0",
         "pastuhov/yii2-redis-mutex": "^0.1.1",
         "resque/php-resque": "1.2",
         "workerman/workerman": "^3.5"
 =======
         "pda/pheanstalk": "^3.1"
+=======
+        "phpoffice/phpword": "^0.14.0",
+        "dompdf/dompdf": "^0.8.2",
+        "phpoffice/phpspreadsheet": "^1.2",
+        "php-amqplib/php-amqplib": "^2.7"
+>>>>>>> feature_use_rabbitmq
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -39,8 +46,9 @@
         "codeception/specify": "~0.4.3"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 10
     },
+<<<<<<< HEAD
     "scripts": {
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject"
@@ -65,4 +73,13 @@
         }
 >>>>>>> feature_beanstalk
     }
+=======
+    "repositories": {
+                "packagist": {
+                                "type": "composer",
+                                            "url": "https://packagist.phpcomposer.com"
+                                                        }
+                    }
+
+>>>>>>> feature_use_rabbitmq
 }
