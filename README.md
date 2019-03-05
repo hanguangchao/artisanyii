@@ -25,3 +25,4 @@
 * [Yii2-redis安装和使用](docs/yii2-redis.md)
 * [Php-Resque安装和使用](docs/php-resque.md)
 * [RabitMq安装和使用](docs/rabitmq.md)
+* [Yii2使用OAuth2](docs/oauth.md)
