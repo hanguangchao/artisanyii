@@ -6,43 +6,50 @@ use Workerman\Worker;
 
 class WorkermanController extends \yii\console\Controller
 {
+
     public function actionTcpServer()
     {
         /**
          * 改造命令行，适应Workman终端参数
          */
         global $argv, $argc;
-        
         $argv[0] = 'yii_workerman/tcp-serve';
-        if ($argc == 3) {
+        if ($argc >= 3) {
             $argv[1] = $argv[2];
-            unset($argv[2]);
         }
-
+        //Yii -d 是别名方式
+        //采用自定义参数识别daemonize模式
+        if ($argc == 4 && $argv[3] == 'd') {
+            Worker::$daemonize = true;
+            $argv[2] = '-d';
+            unset($argv[3]);
+            $argc = 3;
+        }
         // #### create socket and listen 1234 port ####
         $tcp_worker = new Worker("tcp://0.0.0.0:1234");
 
-        // 4 processes
-        $tcp_worker->count = 4;
 
-        // Emitted when new connection come
-        $tcp_worker->onConnect = function($connection)
-        {
-            echo "New Connection\n";
-        };
+        // // 4 processes
+        // $tcp_worker->count = 4;
 
-        // Emitted when data received
-        $tcp_worker->onMessage = function($connection, $data)
-        {
-            // send data to client
-            $connection->send("hello $data \n");
-        };
+        // // Emitted when new connection come
+        // $tcp_worker->onConnect = function($connection)
+        // {
+        //     echo "New Connection\n";
+        // };
 
-        // Emitted when new connection come
-        $tcp_worker->onClose = function($connection)
-        {
-            echo "Connection closed\n";
-        };
+        // // Emitted when data received
+        // $tcp_worker->onMessage = function($connection, $data)
+        // {
+        //     // send data to client
+        //     $connection->send("hello $data \n");
+        // };
+
+        // // Emitted when new connection come
+        // $tcp_worker->onClose = function($connection)
+        // {
+        //     echo "Connection closed\n";
+        // };
 
         Worker::runAll();
     }
