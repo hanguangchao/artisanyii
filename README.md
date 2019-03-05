@@ -1,6 +1,5 @@
 
-内容索引
-
+### 内容索引
 * [feature_api_module](https://github.com/hanguangchao/artisanyii/tree/feature_api_module) 实现接口模块统一JSON输出
 * [adminlte demo](https://github.com/hanguangchao/artisanyii/tree/AdminLTE) AdminLTE 集成Yii2 & yii2-admin
 * [feature_request_behaviors](https://github.com/hanguangchao/artisanyii/tree/feature_request_behaviors) 应用事件
@@ -18,3 +17,8 @@
 * [feature_use_rabbitmq](https://github.com/hanguangchao/artisanyii/tree/feature_use_rabbitmq) Yii使用RabbitMQ
 * [feature_use_yii2queue](https://github.com/hanguangchao/artisanyii/tree/feature_use_yiiqueue) Yii使用官方yii2-queue队列组件
 * [feature_use_workerman](https://github.com/hanguangchao/artisanyii/tree/feature_use_workerman) Yii命令行运行Workerman
+
+### 文档
+* [Beanstalk开发文档](docs/beanstalk.md)
+* [Workerman安装和使用](docs/workerman.md)
+* [Yii2-admin安装和使用](docs/yii2-admin.md)
