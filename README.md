@@ -22,3 +22,6 @@
 * [Beanstalk开发文档](docs/beanstalk.md)
 * [Workerman安装和使用](docs/workerman.md)
 * [Yii2-admin安装和使用](docs/yii2-admin.md)
+* [Yii2-redis安装和使用](docs/yii2-redis.md)
+* [Php-Resque安装和使用](docs/php-resque.md)
+* [RabitMq安装和使用](docs/rabitmq.md)
