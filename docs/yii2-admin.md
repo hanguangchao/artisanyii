@@ -21,3 +21,4 @@ yii migrate --migrationPath=@mdm/admin/migrations
 ```
 composer require "almasaeed2010/adminlte=~2.0"
 ```
+---
