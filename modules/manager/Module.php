@@ -7,7 +7,7 @@ namespace app\modules\manager;
  */
 class Module extends \yii\base\Module
 {
-    public $layout = '@app/views/layouts/backend';
+    //public $layout = '@app/views/layouts/backend';
 
     /**
      * @inheritdoc

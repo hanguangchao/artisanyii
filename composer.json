@@ -29,13 +29,16 @@
         "phpoffice/phpword": "^0.14.0",
         "dompdf/dompdf": "^0.8.2",
         "phpoffice/phpspreadsheet": "^1.2",
-        "php-amqplib/php-amqplib": "^2.7"
+        "php-amqplib/php-amqplib": "^2.7",
+        "yiisoft/yii2-authclient": "~2.1.0",
+        "bshaffer/oauth2-server-php" : "^1.10",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
-
+        
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1",
         "codeception/specify": "~0.4.3"
