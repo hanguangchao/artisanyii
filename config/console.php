@@ -14,6 +14,9 @@ $config = [
             'redis' => 'redis',
             'keyPrefix' => 'AAA:',
         ],
+        'errorHandler' => [
+            'memoryReserveSize' => 0,
+        ],
         'log' => [
             'targets' => [
                 [
