@@ -10,7 +10,9 @@ $config = [
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\redis\Cache',
+            'redis' => 'redis',
+            'keyPrefix' => 'AAA:',
         ],
         'log' => [
             'targets' => [
@@ -18,6 +20,13 @@ $config = [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['info', 'warning'],
+                    'categories' => ['yii\db\*'],
+                    'logVars'   => [],
+                ],
+
             ],
         ],
         'db' => $db,
@@ -27,6 +36,19 @@ $config = [
             'itemChildTable' => '{{%auth_item_child}}',
             'assignmentTable' => '{{%auth_assignment}}',
             'ruleTable' => '{{%auth_rule}}',
+        ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => '127.0.0.1',
+            'port' => 6379,
+            'database' => 0,
+            'password' => null,
+        ],
+        'mutex' => [
+            // 'class' => \pastuhov\yii2redismutex\RedisMutex::className(),
+            // 'redis' => 'redis',
+            // 'expireTime' => 0.1,
+            'class' => 'yii\mutex\FileMutex',
         ],
     ],
     'params' => $params,
@@ -41,10 +63,10 @@ $config = [
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
+    // $config['bootstrap'][] = 'gii';
+    // $config['modules']['gii'] = [
+    //     'class' => 'yii\gii\Module',
+    // ];
 }
 
 return $config;

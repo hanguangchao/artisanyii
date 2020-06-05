@@ -32,11 +32,14 @@
         "php-amqplib/php-amqplib": "^2.7",
         "yiisoft/yii2-authclient": "~2.1.0",
         "bshaffer/oauth2-server-php" : "^1.10",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "loveorigami/yii2-plugins-system": "^3.1",
+        "league/geotools": "@stable",
+        "elasticsearch/elasticsearch": "^7.7"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
-        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-gii": "^2.1",
         "yiisoft/yii2-faker": "~2.0.0",
         
         "codeception/base": "^2.2.3",
@@ -63,10 +66,6 @@
             "generateCookieValidationKey": [
                 "config/web.php"
             ]
-        },
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
         }
     }
 }
