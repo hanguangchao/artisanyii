@@ -1,5 +1,6 @@
 
 ### 内容索引
+* [配置Xhprof](https://github.com/hanguangchao/artisanyii/blob/master/docs/yii2-use-xhprof.md) Yii2如何优雅的配置Xhprof
 * [feature_api_module](https://github.com/hanguangchao/artisanyii/tree/feature_api_module) 实现接口模块统一JSON输出
 * [adminlte demo](https://github.com/hanguangchao/artisanyii/tree/AdminLTE) AdminLTE 集成Yii2 & yii2-admin
 * [feature_request_behaviors](https://github.com/hanguangchao/artisanyii/tree/feature_request_behaviors) 应用事件

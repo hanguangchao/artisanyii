@@ -68,45 +68,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-        // $dompdf = new Dompdf();
-        // $dompdf->loadHtml('
-        //     <style>
-        //     .font-zh {
-        //         font-family: "yahei"
-        //     }
-        //     </style>
-         
-        //     <p>English / <span class="font-zh">正體中文 123 Chinese</span>
-        // ');
-         
-        // $dompdf->setPaper('A4', 'landscape');
-        // $dompdf->set_option('defaultFont', 'yahei'); // 預設字型(僅支援英文)
-        // $dompdf->render();
-         
-        // // Attachment: 0 直接顯示, 1 強制下載
-        // $dompdf->stream(null, ['Attachment' => 0]);
-
-
-
-        // reference the Dompdf namespace
-
-        // instantiate and use the dompdf class
-        // $dompdf = new Dompdf();
-        // $dompdf->set_option('defaultFont', 'yahei');
-        // $dompdf->loadHtml('hello world中文');
-
-        // // (Optional) Setup the paper size and orientation
-        // $dompdf->setPaper('A4', 'landscape');
-
-        // // Render the HTML as PDF
-        // $dompdf->render();
-
-        // // Output the generated PDF to Browser
-        // $dompdf->stream(null, ['Attachment' => 0]);
-        header("Access-Control-Allow-Origin: *");
-        echo json_encode(['code' => 0 , 'message' => 'success']);
-//         return $this->render('index');
+        return 'welcome';
     }
 
     /**

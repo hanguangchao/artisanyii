@@ -12,8 +12,16 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'TXYq6pfYaGxAe0DPwFw1vSOqC2ndSPb9',
         ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => '127.0.0.1',
+            'port' => 6379,
+            'database' => 0,
+            'password' => null,
+        ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\redis\Cache',
+            'redis' => 'redis',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -34,9 +42,11 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning', 'info'],
+                    'logVars' => [],
                 ],
             ],
+            
         ],
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
@@ -72,6 +82,19 @@ $config = [
             'database' => 0,
             'password' => null,
         ],
+        'mutex' => [
+            'class' => \pastuhov\yii2redismutex\RedisMutex::className(),
+            'redis' => 'redis',
+            'expireTime' => 10,
+        ],
+        'session' => [
+            'name' => 'YIISESSID',
+            'cookieParams' => [
+                'lifetime' => 60 * 30,
+                'httponly' => true,
+            ],
+            'timeout'=> 60 * 30,
+        ],
     ],
     'params' => $params,
     'modules' => [
@@ -99,6 +122,9 @@ $config = [
         ],
         'manager' => [
             'class' => 'app\modules\manager\Module',
+        ],
+        'recite' => [
+            'class' => 'app\modules\Recite\Module',
         ],
 
     ],
@@ -137,5 +163,13 @@ $config = [
 
 ];
 
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*',],
+    ];
+}
 
 return $config;

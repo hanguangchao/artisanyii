@@ -6,11 +6,13 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\behaviors\TimestampBehavior;
 
-class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
+class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface, \yii\filters\RateLimitInterface
 {
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+
+    public $rateLimit = 1;
 
     /**
      * @inheritdoc
@@ -27,7 +29,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             [['username', 'auth_key', 'password_hash', 'email'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['status', 'created_at', 'updated_at', 'allowance', 'allowance_updated_at'], 'integer'],
             ['username', 'string', 'min' => 2, 'max' => 255],
             [['password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             ['username', 'unique', 'message' => 'This username has already been taken.'],
@@ -52,6 +54,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'allowance'  => 'Allowance',
+            'allowance_updated_at' => 'Allowance_updated_at',
         ];
     }
 
@@ -185,5 +189,22 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function getRateLimit($request, $action)
+    {
+        return [$this->rateLimit, 1]; // $rateLimit requests per second
+    }
+
+    public function loadAllowance($request, $action)
+    {
+        return [$this->allowance, $this->allowance_updated_at];
+    }
+
+    public function saveAllowance($request, $action, $allowance, $timestamp)
+    {
+        $this->allowance = $allowance;
+        $this->allowance_updated_at = $timestamp;
+        $this->save();
     }
 }
